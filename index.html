@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>BCM1</title>
-    <base href="http://bcm1.local/">
     <link href="css/bootstrap-grid.min.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -28,6 +27,15 @@
         </div>
         <div class="col-md-6">
             <pre id="bcm1formatiert2"></pre>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div id="ByteOutput1" style='font-family: "Courier New", Courier, monospace;'></div>
+        </div>
+        <div class="col-md-6">
+            <div id="ByteOutput2" style='font-family: "Courier New", Courier, monospace;'></div>
         </div>
     </div>
 
@@ -202,7 +210,7 @@
             </nav>
             <div class="tab-content" id="nav-tabContent">
                 <div class="tab-pane fade show active" id="lampe-C47" role="tabpanel" aria-labelledby="lampe-C47-tab">
-                    <table class="table">
+                    <table class="table table-bordered">
                         <tr>
                             <td rowspan="8">Byte 1: Lampenconfig</td>
                             <td>Bit 7: Coming/Leaving Home</td>
@@ -306,31 +314,1555 @@
                         </tr>
                     </table>
                 </div>
-                <div class="tab-pane fade" id="lampe-A6" role="tabpanel" aria-labelledby="lampe-A6-tab">A6</div>
-                <div class="tab-pane fade" id="lampe-C28" role="tabpanel" aria-labelledby="lampe-C28-tab">C28</div>
-                <div class="tab-pane fade" id="lampe-A28" role="tabpanel" aria-labelledby="lampe-A28-tab">A28</div>
-                <div class="tab-pane fade" id="lampe-C4A26" role="tabpanel" aria-labelledby="lampe-C4A26-tab">C4A26</div>
-                <div class="tab-pane fade" id="lampe-C3A27" role="tabpanel" aria-labelledby="lampe-C3A27-tab">C3A27</div>
-                <div class="tab-pane fade" id="lampe-C26A44" role="tabpanel" aria-labelledby="lampe-C26A44-tab">C26A44</div>
-                <div class="tab-pane fade" id="lampe-A7A8" role="tabpanel" aria-labelledby="lampe-A7A8-tab">A7A8</div>
-                <div class="tab-pane fade" id="lampe-A10C50" role="tabpanel" aria-labelledby="lampe-A10C50-tab">A10C50</div>
-                <div class="tab-pane fade" id="lampe-A9C51" role="tabpanel" aria-labelledby="lampe-A9C51-tab">A9C51</div>
-                <div class="tab-pane fade" id="lampe-B50" role="tabpanel" aria-labelledby="lampe-B50-tab">B50</div>
-                <div class="tab-pane fade" id="lampe-B47B48" role="tabpanel" aria-labelledby="lampe-B47B48-tab">B47B48</div>
-                <div class="tab-pane fade" id="lampe-C48C49" role="tabpanel" aria-labelledby="lampe-C48C49-tab">C48C49</div>
-                <div class="tab-pane fade" id="lampe-A4A3" role="tabpanel" aria-labelledby="lampe-A4A3-tab">A4A3</div>
-                <div class="tab-pane fade" id="lampe-C43A2" role="tabpanel" aria-labelledby="lampe-C43A2-tab">C43A2</div>
-                <div class="tab-pane fade" id="lampe-rest" role="tabpanel" aria-labelledby="lampe-rest-tab">rest</div>
+                <div class="tab-pane fade" id="lampe-A6" role="tabpanel" aria-labelledby="lampe-A6-tab">
+                    <table class="table table-bordered">
+                        <tr>
+                            <td rowspan="8">Byte 1: Lampenconfig</td>
+                            <td>Bit 7: Coming/Leaving Home</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 6: Tagfahrlicht</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 5: Blinker Signal</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 4: Bremslicht</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 3: Standlicht</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 2: Parklicht</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 1: Nebelschlussleuchten</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 0: Licht Rückwärtsgang</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+
+                        <tr>
+                            <td rowspan="8">Byte 2:</td>
+                            <td>Bit 7: Kaltdiagnose deaktiviert</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 6: Aus bei Heckklappe offen</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 5: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 4: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 3: Dimmung</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 2: Dimmung</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 1: Dimmung</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 0: Dimmung</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+
+                        <tr>
+                            <td rowspan="8">Byte 3: 3F -> Kanal deaktiviert</td>
+                            <td>Bit 7: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 6: Warmdiagnose disablen</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 5: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 4: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 3: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 2: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 1: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 0: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="tab-pane fade" id="lampe-C28" role="tabpanel" aria-labelledby="lampe-C28-tab">
+                    <table class="table table-bordered">
+                        <tr>
+                            <td rowspan="8">Byte 1: Lampenconfig</td>
+                            <td>Bit 7: Coming/Leaving Home</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 6: Tagfahrlicht</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 5: Blinker Signal</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 4: Bremslicht</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 3: Standlicht</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 2: Parklicht</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 1: Nebelschlussleuchten</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 0: Licht Rückwärtsgang</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+
+                        <tr>
+                            <td rowspan="8">Byte 2:</td>
+                            <td>Bit 7: Kaltdiagnose deaktiviert</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 6: Aus bei Heckklappe offen</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 5: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 4: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 3: Dimmung</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 2: Dimmung</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 1: Dimmung</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 0: Dimmung</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+
+                        <tr>
+                            <td rowspan="8">Byte 3: 3F -> Kanal deaktiviert</td>
+                            <td>Bit 7: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 6: Warmdiagnose disablen</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 5: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 4: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 3: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 2: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 1: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 0: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="tab-pane fade" id="lampe-A28" role="tabpanel" aria-labelledby="lampe-A28-tab">
+                    <table class="table table-bordered">
+                        <tr>
+                            <td rowspan="8">Byte 1: Lampenconfig</td>
+                            <td>Bit 7: Coming/Leaving Home</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 6: Tagfahrlicht</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 5: Blinker Signal</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 4: Bremslicht</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 3: Standlicht</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 2: Parklicht</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 1: Nebelschlussleuchten</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 0: Licht Rückwärtsgang</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+
+                        <tr>
+                            <td rowspan="8">Byte 2:</td>
+                            <td>Bit 7: Kaltdiagnose deaktiviert</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 6: Aus bei Heckklappe offen</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 5: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 4: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 3: Dimmung</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 2: Dimmung</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 1: Dimmung</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 0: Dimmung</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+
+                        <tr>
+                            <td rowspan="8">Byte 3: 3F -> Kanal deaktiviert</td>
+                            <td>Bit 7: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 6: Warmdiagnose disablen</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 5: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 4: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 3: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 2: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 1: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 0: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="tab-pane fade" id="lampe-C4A26" role="tabpanel" aria-labelledby="lampe-C4A26-tab">
+                    <table class="table table-bordered">
+                        <tr>
+                            <td rowspan="8">Byte 1: Lampenconfig</td>
+                            <td>Bit 7: Coming/Leaving Home</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 6: Tagfahrlicht</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 5: Blinker Signal</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 4: Bremslicht</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 3: Standlicht</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 2: Parklicht</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 1: Nebelschlussleuchten</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 0: Licht Rückwärtsgang</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+
+                        <tr>
+                            <td rowspan="8">Byte 2:</td>
+                            <td>Bit 7: Kaltdiagnose deaktiviert</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 6: Aus bei Heckklappe offen</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 5: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 4: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 3: Dimmung</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 2: Dimmung</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 1: Dimmung</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 0: Dimmung</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+
+                        <tr>
+                            <td rowspan="8">Byte 3: 3F -> Kanal deaktiviert</td>
+                            <td>Bit 7: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 6: Warmdiagnose disablen</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 5: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 4: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 3: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 2: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 1: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 0: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="tab-pane fade" id="lampe-C3A27" role="tabpanel" aria-labelledby="lampe-C3A27-tab">
+                    <table class="table table-bordered">
+                        <tr>
+                            <td rowspan="8">Byte 1: Lampenconfig</td>
+                            <td>Bit 7: Coming/Leaving Home</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 6: Tagfahrlicht</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 5: Blinker Signal</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 4: Bremslicht</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 3: Standlicht</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 2: Parklicht</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 1: Nebelschlussleuchten</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 0: Licht Rückwärtsgang</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+
+                        <tr>
+                            <td rowspan="8">Byte 2:</td>
+                            <td>Bit 7: Kaltdiagnose deaktiviert</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 6: Aus bei Heckklappe offen</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 5: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 4: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 3: Dimmung</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 2: Dimmung</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 1: Dimmung</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 0: Dimmung</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+
+                        <tr>
+                            <td rowspan="8">Byte 3: 3F -> Kanal deaktiviert</td>
+                            <td>Bit 7: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 6: Warmdiagnose disablen</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 5: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 4: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 3: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 2: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 1: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 0: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="tab-pane fade" id="lampe-C26A44" role="tabpanel" aria-labelledby="lampe-C26A44-tab">
+                    <table class="table table-bordered">
+                        <tr>
+                            <td rowspan="8">Byte 1: Lampenconfig</td>
+                            <td>Bit 7: Coming/Leaving Home</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 6: Tagfahrlicht</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 5: Blinker Signal</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 4: Bremslicht</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 3: Standlicht</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 2: Parklicht</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 1: Nebelschlussleuchten</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 0: Licht Rückwärtsgang</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+
+                        <tr>
+                            <td rowspan="8">Byte 2:</td>
+                            <td>Bit 7: Kaltdiagnose deaktiviert</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 6: Aus bei Heckklappe offen</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 5: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 4: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 3: Dimmung</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 2: Dimmung</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 1: Dimmung</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 0: Dimmung</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+
+                        <tr>
+                            <td rowspan="8">Byte 3: 3F -> Kanal deaktiviert</td>
+                            <td>Bit 7: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 6: Warmdiagnose disablen</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 5: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 4: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 3: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 2: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 1: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 0: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="tab-pane fade" id="lampe-A7A8" role="tabpanel" aria-labelledby="lampe-A7A8-tab">
+                    <table class="table table-bordered">
+                        <tr>
+                            <td rowspan="8">Byte 1: Lampenconfig</td>
+                            <td>Bit 7: Coming/Leaving Home</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 6: Tagfahrlicht</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 5: Blinker Signal</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 4: Bremslicht</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 3: Standlicht</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 2: Parklicht</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 1: Nebelschlussleuchten</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 0: Licht Rückwärtsgang</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+
+                        <tr>
+                            <td rowspan="8">Byte 2:</td>
+                            <td>Bit 7: Kaltdiagnose deaktiviert</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 6: Aus bei Heckklappe offen</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 5: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 4: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 3: Dimmung</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 2: Dimmung</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 1: Dimmung</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 0: Dimmung</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+
+                        <tr>
+                            <td rowspan="8">Byte 3: 3F -> Kanal deaktiviert</td>
+                            <td>Bit 7: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 6: Warmdiagnose disablen</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 5: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 4: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 3: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 2: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 1: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 0: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="tab-pane fade" id="lampe-A10C50" role="tabpanel" aria-labelledby="lampe-A10C50-tab">
+                    <table class="table table-bordered">
+                        <tr>
+                            <td rowspan="8">Byte 1: Lampenconfig</td>
+                            <td>Bit 7: Coming/Leaving Home</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 6: Tagfahrlicht</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 5: Blinker Signal</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 4: Bremslicht</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 3: Standlicht</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 2: Parklicht</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 1: Nebelschlussleuchten</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 0: Licht Rückwärtsgang</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+
+                        <tr>
+                            <td rowspan="8">Byte 2:</td>
+                            <td>Bit 7: Kaltdiagnose deaktiviert</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 6: Aus bei Heckklappe offen</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 5: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 4: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 3: Dimmung</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 2: Dimmung</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 1: Dimmung</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 0: Dimmung</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+
+                        <tr>
+                            <td rowspan="8">Byte 3: 3F -> Kanal deaktiviert</td>
+                            <td>Bit 7: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 6: Warmdiagnose disablen</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 5: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 4: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 3: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 2: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 1: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 0: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="tab-pane fade" id="lampe-A9C51" role="tabpanel" aria-labelledby="lampe-A9C51-tab">
+                    <table class="table table-bordered">
+                        <tr>
+                            <td rowspan="8">Byte 1: Lampenconfig</td>
+                            <td>Bit 7: Coming/Leaving Home</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 6: Tagfahrlicht</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 5: Blinker Signal</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 4: Bremslicht</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 3: Standlicht</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 2: Parklicht</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 1: Nebelschlussleuchten</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 0: Licht Rückwärtsgang</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+
+                        <tr>
+                            <td rowspan="8">Byte 2:</td>
+                            <td>Bit 7: Kaltdiagnose deaktiviert</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 6: Aus bei Heckklappe offen</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 5: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 4: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 3: Dimmung</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 2: Dimmung</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 1: Dimmung</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 0: Dimmung</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+
+                        <tr>
+                            <td rowspan="8">Byte 3: 3F -> Kanal deaktiviert</td>
+                            <td>Bit 7: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 6: Warmdiagnose disablen</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 5: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 4: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 3: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 2: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 1: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 0: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="tab-pane fade" id="lampe-B50" role="tabpanel" aria-labelledby="lampe-B50-tab">
+                    <table class="table table-bordered">
+                        <tr>
+                            <td rowspan="8">Byte 1: Lampenconfig</td>
+                            <td>Bit 7: Coming/Leaving Home</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 6: Tagfahrlicht</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 5: Blinker Signal</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 4: Bremslicht</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 3: Standlicht</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 2: Parklicht</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 1: Nebelschlussleuchten</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 0: Licht Rückwärtsgang</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+
+                        <tr>
+                            <td rowspan="8">Byte 2:</td>
+                            <td>Bit 7: Kaltdiagnose deaktiviert</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 6: Aus bei Heckklappe offen</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 5: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 4: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 3: Dimmung</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 2: Dimmung</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 1: Dimmung</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 0: Dimmung</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+
+                        <tr>
+                            <td rowspan="8">Byte 3: 3F -> Kanal deaktiviert</td>
+                            <td>Bit 7: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 6: Warmdiagnose disablen</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 5: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 4: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 3: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 2: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 1: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 0: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="tab-pane fade" id="lampe-B47B48" role="tabpanel" aria-labelledby="lampe-B47B48-tab">
+                    <table class="table table-bordered">
+                        <tr>
+                            <td rowspan="8">Byte 1: Lampenconfig</td>
+                            <td>Bit 7: Coming/Leaving Home</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 6: Tagfahrlicht</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 5: Blinker Signal</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 4: Bremslicht</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 3: Standlicht</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 2: Parklicht</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 1: Nebelschlussleuchten</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 0: Licht Rückwärtsgang</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+
+                        <tr>
+                            <td rowspan="8">Byte 2:</td>
+                            <td>Bit 7: Kaltdiagnose deaktiviert</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 6: Aus bei Heckklappe offen</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 5: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 4: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 3: Dimmung</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 2: Dimmung</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 1: Dimmung</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 0: Dimmung</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+
+                        <tr>
+                            <td rowspan="8">Byte 3: 3F -> Kanal deaktiviert</td>
+                            <td>Bit 7: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 6: Warmdiagnose disablen</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 5: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 4: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 3: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 2: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 1: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 0: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="tab-pane fade" id="lampe-C48C49" role="tabpanel" aria-labelledby="lampe-C48C49-tab">
+                    <table class="table table-bordered">
+                        <tr>
+                            <td rowspan="8">Byte 1: Lampenconfig</td>
+                            <td>Bit 7: Coming/Leaving Home</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 6: Tagfahrlicht</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 5: Blinker Signal</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 4: Bremslicht</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 3: Standlicht</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 2: Parklicht</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 1: Nebelschlussleuchten</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 0: Licht Rückwärtsgang</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+
+                        <tr>
+                            <td rowspan="8">Byte 2:</td>
+                            <td>Bit 7: Kaltdiagnose deaktiviert</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 6: Aus bei Heckklappe offen</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 5: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 4: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 3: Dimmung</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 2: Dimmung</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 1: Dimmung</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 0: Dimmung</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+
+                        <tr>
+                            <td rowspan="8">Byte 3: 3F -> Kanal deaktiviert</td>
+                            <td>Bit 7: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 6: Warmdiagnose disablen</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 5: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 4: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 3: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 2: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 1: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 0: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="tab-pane fade" id="lampe-A4A3" role="tabpanel" aria-labelledby="lampe-A4A3-tab">
+                    <table class="table table-bordered">
+                        <tr>
+                            <td rowspan="8">Byte 1: Lampenconfig</td>
+                            <td>Bit 7: Coming/Leaving Home</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 6: Tagfahrlicht</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 5: Blinker Signal</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 4: Bremslicht</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 3: Standlicht</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 2: Parklicht</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 1: Nebelschlussleuchten</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 0: Licht Rückwärtsgang</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+
+                        <tr>
+                            <td rowspan="8">Byte 2:</td>
+                            <td>Bit 7: Kaltdiagnose deaktiviert</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 6: Aus bei Heckklappe offen</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 5: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 4: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 3: Dimmung</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 2: Dimmung</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 1: Dimmung</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 0: Dimmung</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+
+                        <tr>
+                            <td rowspan="8">Byte 3: 3F -> Kanal deaktiviert</td>
+                            <td>Bit 7: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 6: Warmdiagnose disablen</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 5: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 4: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 3: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 2: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 1: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 0: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="tab-pane fade" id="lampe-C43A2" role="tabpanel" aria-labelledby="lampe-C43A2-tab">
+                    <table class="table table-bordered">
+                        <tr>
+                            <td rowspan="8">Byte 1: Lampenconfig</td>
+                            <td>Bit 7: Coming/Leaving Home</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 6: Tagfahrlicht</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 5: Blinker Signal</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 4: Bremslicht</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 3: Standlicht</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 2: Parklicht</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 1: Nebelschlussleuchten</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 0: Licht Rückwärtsgang</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+
+                        <tr>
+                            <td rowspan="8">Byte 2:</td>
+                            <td>Bit 7: Kaltdiagnose deaktiviert</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 6: Aus bei Heckklappe offen</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 5: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 4: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 3: Dimmung</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 2: Dimmung</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 1: Dimmung</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 0: Dimmung</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+
+                        <tr>
+                            <td rowspan="8">Byte 3: 3F -> Kanal deaktiviert</td>
+                            <td>Bit 7: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 6: Warmdiagnose disablen</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 5: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 4: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 3: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 2: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 1: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 0: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="tab-pane fade" id="lampe-rest" role="tabpanel" aria-labelledby="lampe-rest-tab">
+                    <table class="table table-bordered">
+                        <tr>
+                            <td rowspan="8">Byte 1: Lampenconfig</td>
+                            <td>Bit 7: Coming/Leaving Home</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 6: Tagfahrlicht</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 5: Blinker Signal</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 4: Bremslicht</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 3: Standlicht</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 2: Parklicht</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 1: Nebelschlussleuchten</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 0: Licht Rückwärtsgang</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+
+                        <tr>
+                            <td rowspan="8">Byte 2:</td>
+                            <td>Bit 7: Kaltdiagnose deaktiviert</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 6: Aus bei Heckklappe offen</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 5: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 4: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 3: Dimmung</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 2: Dimmung</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 1: Dimmung</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 0: Dimmung</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
 
     <div class="row">
-        <div class="col-md-6">
-            <div id="ByteOutput1" style='font-family: "Courier New", Courier, monospace;'></div>
-        </div>
-        <div class="col-md-6">
-            <div id="ByteOutput2" style='font-family: "Courier New", Courier, monospace;'></div>
+        <div class="col-md-12">
+            <p>Durchgeführte Änderungen:</p>
+            <textarea id="bcmchanges" disabled style="width: 100%"></textarea>
         </div>
     </div>
 </div>
