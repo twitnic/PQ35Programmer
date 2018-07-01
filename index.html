@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BCM1</title>
+    <base href="http://bcm1.local/">
+    <link href="css/bootstrap-grid.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <p>Die BCM1 Codierung VORHER hier eintragen:</p>
+            <textarea id="bcm1codierung1" style="width: 100%">40C16202212F80612002212F3BAA5A23FE4F33211300003F04212C04213600011500003F00003F00003F00003F0078</textarea>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <p>Die BCM1 Codierung DANACH hier eintragen:</p>
+            <textarea id="bcm1codierung2" style="width: 100%">40C16233A24480612033A24439AA5A29FE4F33AA4200003F04212C04213600011600003F00003F00003F00003F0078</textarea>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <pre id="bcm1formatiert1"></pre>
+        </div>
+        <div class="col-md-6">
+            <pre id="bcm1formatiert2"></pre>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th scope="col">Ausgang</th>
+                    <th scope="col">Lampe</th>
+                    <th scope="col">Original</th>
+                    <th scope="col">Byte 1</th>
+                    <th scope="col">Byte 2</th>
+                    <th scope="col">Byte 3</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">C47</th>
+                    <td>Foglight / Rear L. Light</td>
+                    <td id="C47Original"></td>
+                    <td id="C47byte1"></td>
+                    <td id="C47byte2"></td>
+                    <td id="C47byte3"></td>
+                </tr>
+                <tr>
+                    <th scope="row">A6</th>
+                    <td>Foglight / Rear R. Light</td>
+                    <td id="A6Original"></td>
+                    <td id="A6byte1"></td>
+                    <td id="A6byte2"></td>
+                    <td id="A6byte3"></td>
+                </tr>
+                <tr>
+                    <th scope="row">C28</th>
+                    <td>Reverse R. Light</td>
+                    <td id="C28Original"></td>
+                    <td id="C28byte1"></td>
+                    <td id="C28byte2"></td>
+                    <td id="C28byte3"></td>
+                </tr>
+                <tr>
+                    <th scope="row">A28</th>
+                    <td>Reverse L. Light</td>
+                    <td id="A28Original"></td>
+                    <td id="A28byte1"></td>
+                    <td id="A28byte2"></td>
+                    <td id="A28byte3"></td>
+                </tr>
+                <tr>
+                    <th scope="row">C4,A26</th>
+                    <td>Stop R+L</td>
+                    <td id="C4A26Original"></td>
+                    <td id="C4A26byte1"></td>
+                    <td id="C4A26byte2"></td>
+                    <td id="C4A26byte3"></td>
+                </tr>
+                <tr>
+                    <th scope="row">C3,A27</th>
+                    <td>Stand Rear R+L</td>
+                    <td id="C3A27Original"></td>
+                    <td id="C3A27byte1"></td>
+                    <td id="C3A27byte2"></td>
+                    <td id="C3A27byte3"></td>
+                </tr>
+                <tr>
+                    <th scope="row">C26,A44</th>
+                    <td>Stand Front R+L</td>
+                    <td id="C26A44Original"></td>
+                    <td id="C26A44byte1"></td>
+                    <td id="C26A44byte2"></td>
+                    <td id="C26A44byte3"></td>
+                </tr>
+                <tr>
+                    <th scope="row">A7,A8</th>
+                    <td>Daylight R+L</td>
+                    <td id="A7A8Original"></td>
+                    <td id="A7A8byte1"></td>
+                    <td id="A7A8byte2"></td>
+                    <td id="A7A8byte3"></td>
+                </tr>
+                <tr>
+                    <th scope="row">A10,C50</th>
+                    <td>Turn Front R+L</td>
+                    <td id="A10C50Original"></td>
+                    <td id="A10C50byte1"></td>
+                    <td id="A10C50byte2"></td>
+                    <td id="A10C50byte3"></td>
+                </tr>
+                <tr>
+                    <th scope="row">A9,C51</th>
+                    <td>Turn rear R+L</td>
+                    <td id="A9C51Original"></td>
+                    <td id="A9C51byte1"></td>
+                    <td id="A9C51byte2"></td>
+                    <td id="A9C51byte3"></td>
+                </tr>
+                <tr>
+                    <th scope="row">B50</th>
+                    <td>Fussraum</td>
+                    <td id="B50Original"></td>
+                    <td id="B50byte1"></td>
+                    <td id="B50byte2"></td>
+                    <td id="B50byte3"></td>
+                </tr>
+                <tr>
+                    <th scope="row">B47,B48</th>
+                    <td>Reserve</td>
+                    <td id="B47B48Original"></td>
+                    <td id="B47B48byte1"></td>
+                    <td id="B47B48byte2"></td>
+                    <td id="B47B48byte3"></td>
+                </tr>
+                <tr>
+                    <th scope="row">C48,C49</th>
+                    <td>Xenon Shutter</td>
+                    <td id="C48C49Original"></td>
+                    <td id="C48C49byte1"></td>
+                    <td id="C48C49byte2"></td>
+                    <td id="C48C49byte3"></td>
+                </tr>
+                <tr>
+                    <th scope="row">A4,A3</th>
+                    <td>Side Turn Signal R+L</td>
+                    <td id="A4A3Original"></td>
+                    <td id="A4A3byte1"></td>
+                    <td id="A4A3byte2"></td>
+                    <td id="A4A3byte3"></td>
+                </tr>
+                <tr>
+                    <th scope="row">C43,A2</th>
+                    <td>Cornering R+L</td>
+                    <td id="C43A2Original"></td>
+                    <td id="C43A2byte1"></td>
+                    <td id="C43A2byte2"></td>
+                    <td id="C43A2byte3"></td>
+                </tr>
+                <tr>
+                    <th scope="row">--</th>
+                    <td>Coming / Leaving Home</td>
+                    <td id="restOriginal"></td>
+                    <td id="restbyte1"></td>
+                    <td id="restbyte2"></td>
+                    <td></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <nav>
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <a class="nav-item nav-link active" id="lampe-C47-tab" data-toggle="tab" href="#lampe-C47" role="tab" aria-controls="lampe-C47" aria-selected="true">C47</a>
+                    <a class="nav-item nav-link" id="lampe-A6-tab" data-toggle="tab" href="#lampe-A6" role="tab" aria-controls="lampe-A6" aria-selected="false">A6</a>
+                    <a class="nav-item nav-link" id="lampe-C28-tab" data-toggle="tab" href="#lampe-C28" role="tab" aria-controls="lampe-C28" aria-selected="false">C28</a>
+                    <a class="nav-item nav-link" id="lampe-A28-tab" data-toggle="tab" href="#lampe-A28" role="tab" aria-controls="lampe-A28" aria-selected="false">A28</a>
+                    <a class="nav-item nav-link" id="lampe-C4A26-tab" data-toggle="tab" href="#lampe-C4A26" role="tab" aria-controls="lampe-C4A26" aria-selected="false">C4,A26</a>
+                    <a class="nav-item nav-link" id="lampe-C3A27-tab" data-toggle="tab" href="#lampe-C3A27" role="tab" aria-controls="lampe-C3A27" aria-selected="false">C3,A27</a>
+                    <a class="nav-item nav-link" id="lampe-C26A44-tab" data-toggle="tab" href="#lampe-C26A44" role="tab" aria-controls="lampe-C26A44" aria-selected="false">C26,A44</a>
+                    <a class="nav-item nav-link" id="lampe-A7A8-tab" data-toggle="tab" href="#lampe-A7A8" role="tab" aria-controls="lampe-A7A8" aria-selected="false">A7,A8</a>
+                    <a class="nav-item nav-link" id="lampe-A10C50-tab" data-toggle="tab" href="#lampe-A10C50" role="tab" aria-controls="lampe-A10C50" aria-selected="false">A10,C50</a>
+                    <a class="nav-item nav-link" id="lampe-A9C51-tab" data-toggle="tab" href="#lampe-A9C51" role="tab" aria-controls="lampe-A9C51" aria-selected="false">A9,C51</a>
+                    <a class="nav-item nav-link" id="lampe-B50-tab" data-toggle="tab" href="#lampe-B50" role="tab" aria-controls="lampe-B50" aria-selected="false">B50</a>
+                    <a class="nav-item nav-link" id="lampe-B47B48-tab" data-toggle="tab" href="#lampe-B47B48" role="tab" aria-controls="lampe-B47B48" aria-selected="false">B47,B48</a>
+                    <a class="nav-item nav-link" id="lampe-C48C49-tab" data-toggle="tab" href="#lampe-C48C49" role="tab" aria-controls="lampe-C48C49" aria-selected="false">C48,C49</a>
+                    <a class="nav-item nav-link" id="lampe-A4A3-tab" data-toggle="tab" href="#lampe-A4A3" role="tab" aria-controls="lampe-A4A3" aria-selected="false">A4,A3</a>
+                    <a class="nav-item nav-link" id="lampe-C43A2-tab" data-toggle="tab" href="#lampe-C43A2" role="tab" aria-controls="lampe-C43A2" aria-selected="false">C43,A2</a>
+                    <a class="nav-item nav-link" id="lampe-rest-tab" data-toggle="tab" href="#lampe-rest" role="tab" aria-controls="lampe-rest" aria-selected="false">--</a>
+                </div>
+            </nav>
+            <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="lampe-C47" role="tabpanel" aria-labelledby="lampe-C47-tab">
+                    <table class="table">
+                        <tr>
+                            <td rowspan="8">Byte 1: Lampenconfig</td>
+                            <td>Bit 7: Coming/Leaving Home</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 6: Tagfahrlicht</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 5: Blinker Signal</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 4: Bremslicht</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 3: Standlicht</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 2: Parklicht</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 1: Nebelschlussleuchten</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 0: Licht Rückwärtsgang</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+
+                        <tr>
+                            <td rowspan="8">Byte 2:</td>
+                            <td>Bit 7: Kaltdiagnose deaktiviert</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 6: Aus bei Heckklappe offen</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 5: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 4: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 3: Dimmung</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 2: Dimmung</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 1: Dimmung</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 0: Dimmung</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+
+                        <tr>
+                            <td rowspan="8">Byte 3: 3F -> Kanal deaktiviert</td>
+                            <td>Bit 7: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 6: Warmdiagnose disablen</td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 5: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 4: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 3: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 2: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 1: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>Bit 0: </td>
+                            <td><select><option value="0">0</option><option value="0">1</option></select></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="tab-pane fade" id="lampe-A6" role="tabpanel" aria-labelledby="lampe-A6-tab">A6</div>
+                <div class="tab-pane fade" id="lampe-C28" role="tabpanel" aria-labelledby="lampe-C28-tab">C28</div>
+                <div class="tab-pane fade" id="lampe-A28" role="tabpanel" aria-labelledby="lampe-A28-tab">A28</div>
+                <div class="tab-pane fade" id="lampe-C4A26" role="tabpanel" aria-labelledby="lampe-C4A26-tab">C4A26</div>
+                <div class="tab-pane fade" id="lampe-C3A27" role="tabpanel" aria-labelledby="lampe-C3A27-tab">C3A27</div>
+                <div class="tab-pane fade" id="lampe-C26A44" role="tabpanel" aria-labelledby="lampe-C26A44-tab">C26A44</div>
+                <div class="tab-pane fade" id="lampe-A7A8" role="tabpanel" aria-labelledby="lampe-A7A8-tab">A7A8</div>
+                <div class="tab-pane fade" id="lampe-A10C50" role="tabpanel" aria-labelledby="lampe-A10C50-tab">A10C50</div>
+                <div class="tab-pane fade" id="lampe-A9C51" role="tabpanel" aria-labelledby="lampe-A9C51-tab">A9C51</div>
+                <div class="tab-pane fade" id="lampe-B50" role="tabpanel" aria-labelledby="lampe-B50-tab">B50</div>
+                <div class="tab-pane fade" id="lampe-B47B48" role="tabpanel" aria-labelledby="lampe-B47B48-tab">B47B48</div>
+                <div class="tab-pane fade" id="lampe-C48C49" role="tabpanel" aria-labelledby="lampe-C48C49-tab">C48C49</div>
+                <div class="tab-pane fade" id="lampe-A4A3" role="tabpanel" aria-labelledby="lampe-A4A3-tab">A4A3</div>
+                <div class="tab-pane fade" id="lampe-C43A2" role="tabpanel" aria-labelledby="lampe-C43A2-tab">C43A2</div>
+                <div class="tab-pane fade" id="lampe-rest" role="tabpanel" aria-labelledby="lampe-rest-tab">rest</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div id="ByteOutput1" style='font-family: "Courier New", Courier, monospace;'></div>
+        </div>
+        <div class="col-md-6">
+            <div id="ByteOutput2" style='font-family: "Courier New", Courier, monospace;'></div>
+        </div>
+    </div>
+</div>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
