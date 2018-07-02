@@ -27,6 +27,14 @@
       }
     }
 
+    $("#vorabDaten").click(function () {
+      $("#bcm1codierung1").val('40C16202212F80612002212F3BAA5A23FE4F33211300003F04212C04213600011500003F00003F00003F00003F0078');
+    });
+
+    $("#danachDaten").click(function () {
+      $("#bcm1codierung2").val('40C16233A24480612033A24439AA5A29FE4F33AA4200003F04212C04213600011600003F00003F00003F00003F0078');
+    });
+
 
     var C47 = new Lampe($bcm1codierung1[0], $bcm1codierung1[1], $bcm1codierung1[2]);
     printLamp(C47, 'C47');

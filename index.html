@@ -12,13 +12,15 @@
     <div class="row">
         <div class="col-md-12">
             <p>Die BCM1 Codierung VORHER hier eintragen:</p>
-            <textarea id="bcm1codierung1" style="width: 100%">40C16202212F80612002212F3BAA5A23FE4F33211300003F04212C04213600011500003F00003F00003F00003F0078</textarea>
+            <textarea id="bcm1codierung1" style="width: 85%"></textarea>
+            <button id="vorabDaten">Insert Vorab-Daten</button>
         </div>
     </div>
     <div class="row">
         <div class="col-md-12">
             <p>Die BCM1 Codierung DANACH hier eintragen:</p>
-            <textarea id="bcm1codierung2" style="width: 100%">40C16233A24480612033A24439AA5A29FE4F33AA4200003F04212C04213600011600003F00003F00003F00003F0078</textarea>
+            <textarea id="bcm1codierung2" style="width: 85%"></textarea>
+            <button id="danachDaten">Insert Danach-Daten</button>
         </div>
     </div>
     <div class="row">
@@ -211,6 +213,11 @@
             <div class="tab-content" id="nav-tabContent">
                 <div class="tab-pane fade show active" id="lampe-C47" role="tabpanel" aria-labelledby="lampe-C47-tab">
                     <table class="table table-bordered">
+                        <thead>
+                            <th>Byte</th>
+                            <th>Bit</th>
+                            <th>Wert</th>
+                        </thead>
                         <tr>
                             <td rowspan="8">Byte 1: Lampenconfig</td>
                             <td>Bit 7: Coming/Leaving Home</td>
