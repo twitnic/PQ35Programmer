@@ -96,13 +96,26 @@
 
   function generateSecondBcm1Dff() {
 
+      //------- Für Diff
+      $bcm1codierung1 = $.trim($('#bcm1codierung1').val());
+      $bcm1codierung1 = $bcm1codierung1.match(/.{1,2}/g);
+      //-------/ Für Diff
+
       $bcm1codierung2 = $.trim($('#bcm1codierung2').val());
       $bcm1codierung2 = $bcm1codierung2.match(/.{1,2}/g);
 
       for (var i = 0; i < $bcm1codierung2.length; i++) {
-          $('#bcm1formatiert2').append($bcm1codierung2[i] + ' ');
 
-          $('#ByteOutput2').append((i + 1) + '. Bit:' + ' ' + hex2bin($bcm1codierung2[i]) + ' ');
+
+          if($bcm1codierung1[i] == $bcm1codierung2[i]) {
+              $('#bcm1formatiert2').append($bcm1codierung2[i] + ' ');
+              $('#ByteOutput2').append((i + 1) + '. Bit:' + ' ' + hex2bin($bcm1codierung2[i]) + ' ');
+          } else {
+              $('#bcm1formatiert2').append('<span style="color: red;">' + $bcm1codierung2[i] + '</span> ');
+              $('#ByteOutput2').append('<span style="color: red;">' + (i + 1) + '. Bit:' + ' ' + hex2bin($bcm1codierung2[i]) + '</span> ');
+          }
+
+
           if (((i + 1) % 3) === 0) {
               $('#ByteOutput2').append('<br>');
           }
